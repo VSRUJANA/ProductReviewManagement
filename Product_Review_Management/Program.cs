@@ -68,8 +68,11 @@ namespace Product_Review_Management
             //Console.WriteLine("\nAverage rating for each productId :");
             //management.GetAverageRating();
 
-            Console.WriteLine("\nGet products whose review contains nice :");
-            management.GetProductWithReviewNice();
+            //Console.WriteLine("\nGet products whose review contains nice :");
+            //management.GetProductWithReviewNice();
+
+            Console.WriteLine("\nGet Records with UserID = 10 and order by rating :");
+            management.GetRecordsWithUserIdAs10();
         }
     }
 }
