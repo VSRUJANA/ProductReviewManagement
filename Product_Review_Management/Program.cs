@@ -12,10 +12,12 @@ namespace Product_Review_Management
             List<ProductReview> productReviewList = new List<ProductReview>()
             {
                 new ProductReview(){ProductID=1,UserID=1,Rating=4,Review="Bad",isLike=true},
+                new ProductReview(){ProductID=1,UserID=4,Rating=8,Review="Nice",isLike=true},
                 new ProductReview(){ProductID=2,UserID=2,Rating=7,Review="Good",isLike=true},
                 new ProductReview(){ProductID=2,UserID=1,Rating=10,Review="Excellent",isLike=true},
                 new ProductReview(){ProductID=2,UserID=3,Rating=9,Review="Excellent",isLike=false},
                 new ProductReview(){ProductID=3,UserID=1,Rating=5,Review="Average",isLike=true},
+                new ProductReview(){ProductID=3,UserID=8,Rating=7,Review="Nice",isLike=true},
                 new ProductReview(){ProductID=3,UserID=4,Rating=1,Review="Worst",isLike=true},
                 new ProductReview(){ProductID=4,UserID=1,Rating=1,Review="Worst",isLike=false},
                 new ProductReview(){ProductID=5,UserID=5,Rating=3,Review="Bad",isLike=true},
@@ -23,6 +25,7 @@ namespace Product_Review_Management
                 new ProductReview(){ProductID=6,UserID=4,Rating=5,Review="Average",isLike=true},
                 new ProductReview(){ProductID=6,UserID=5,Rating=5,Review="Average",isLike=true},
                 new ProductReview(){ProductID=7,UserID=5,Rating=1,Review="Worst",isLike=false},
+                new ProductReview(){ProductID=7,UserID=6,Rating=8,Review="Nice",isLike=false},
                 new ProductReview(){ProductID=8,UserID=1,Rating=9,Review="Excellent",isLike=true},
                 new ProductReview(){ProductID=8,UserID=3,Rating=3,Review="Bad",isLike=false},
                 new ProductReview(){ProductID=6,UserID=4,Rating=4,Review="Bad",isLike=true},
@@ -62,8 +65,11 @@ namespace Product_Review_Management
             //Console.WriteLine("\nRetrieve all the records from the datatable with isLike value as true :");
             //management.GetRecordsWithIsLikeTrue();
 
-            Console.WriteLine("\nAverage rating for each productId :");
-            management.GetAverageRating();
+            //Console.WriteLine("\nAverage rating for each productId :");
+            //management.GetAverageRating();
+
+            Console.WriteLine("\nGet products whose review contains nice :");
+            management.GetProductWithReviewNice();
         }
     }
 }

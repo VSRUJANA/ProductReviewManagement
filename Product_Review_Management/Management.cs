@@ -127,5 +127,20 @@ namespace Product_Review_Management
                 Console.WriteLine("   " + list.ProductID + " \t\t " + Math.Round(list.Average, 2));
             }
         }
+
+        // Get products whose review contains nice
+        public void GetProductWithReviewNice()
+        {
+            var recordedData = from productReview in dataTable.AsEnumerable()
+                               where productReview.Field<string>("Review").ToUpper().Contains("NICE")
+                               select productReview;
+
+            foreach (var product in recordedData)
+            {
+                Console.WriteLine("ProductID : " + product.Field<int>("ProductID") + "\t" + "UserID : " + product.Field<int>("UserID")
+                    + "\t" + "Rating : " + product.Field<double>("Rating") + "\t" + "Review : " + product.Field<string>("Review").PadRight(10)
+                    + "isLike : " + product.Field<bool>("isLike"));
+            }
+        }
     }
 }
