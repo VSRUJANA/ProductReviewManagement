@@ -38,12 +38,9 @@ namespace Product_Review_Management
                 new ProductReview(){ProductID=5,UserID=3,Rating=5,Review="Average",isLike=true}
             };
 
-            // Printing Product review list
-            foreach (var list in productReviewList)
-            {
-                Console.WriteLine("ProductID: " + list.ProductID + "\t" + "User ID: " + list.UserID +
-                    "\t" + "Rating: " + list.Rating + "\t" + "Review: " + list.Review.PadRight(15) + "isLike: " + list.isLike);
-            }
+            Console.WriteLine("Top 3 best rated records in Product Review List : ");
+            Management management = new Management();
+            management.Top3Records(productReviewList);
         }
     }
 }
