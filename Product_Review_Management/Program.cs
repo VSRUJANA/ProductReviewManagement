@@ -45,6 +45,9 @@ namespace Product_Review_Management
 
             Console.WriteLine("\nRecords whose rating is greater than 3 and productID is 1 or 4 or 9 :");
             management.SelectedRecords(productReviewList);
+
+            Console.WriteLine("\nCount of reviews present for each productID :");
+            management.RetrieveCountOfRecords(productReviewList);
         }
     }
 }
