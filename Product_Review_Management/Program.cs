@@ -59,9 +59,11 @@ namespace Product_Review_Management
             //Console.WriteLine("\nValues inserted into Datatable successfully!");
             //management.DisplayDataTable();
 
-            Console.WriteLine("Retrieve all the records from the datatable with isLike value as true :");
-            management.GetRecordsWithIsLikeTrue();
+            //Console.WriteLine("\nRetrieve all the records from the datatable with isLike value as true :");
+            //management.GetRecordsWithIsLikeTrue();
 
+            Console.WriteLine("\nAverage rating for each productId :");
+            management.GetAverageRating();
         }
     }
 }

@@ -115,5 +115,17 @@ namespace Product_Review_Management
                     + "isLike : " + product.Field<bool>("isLike"));
             }
         }
+
+        // Find Average rating for each productId
+        public void GetAverageRating()
+        {
+            var recordedData = dataTable.AsEnumerable().GroupBy(x => x.Field<int>("ProductID")).Select
+                               (x => new { ProductID = x.Key, Average = x.Average(x => x.Field<double>("Rating")) });
+            Console.WriteLine("Product Id    Average Rating");
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine("   " + list.ProductID + " \t\t " + Math.Round(list.Average, 2));
+            }
+        }
     }
 }
