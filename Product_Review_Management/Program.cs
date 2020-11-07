@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Product_Review_Management
 {
@@ -6,7 +8,42 @@ namespace Product_Review_Management
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Welcome to Product Review Management System!\n");
+            List<ProductReview> productReviewList = new List<ProductReview>()
+            {
+                new ProductReview(){ProductID=1,UserID=1,Rating=3,Review="Bad",isLike=true},
+                new ProductReview(){ProductID=2,UserID=2,Rating=7,Review="Good",isLike=true},
+                new ProductReview(){ProductID=2,UserID=1,Rating=10,Review="Excellent",isLike=true},
+                new ProductReview(){ProductID=2,UserID=3,Rating=9,Review="Excellent",isLike=false},
+                new ProductReview(){ProductID=3,UserID=1,Rating=5,Review="Average",isLike=true},
+                new ProductReview(){ProductID=3,UserID=4,Rating=1,Review="Worst",isLike=true},
+                new ProductReview(){ProductID=4,UserID=1,Rating=1,Review="Worst",isLike=false},
+                new ProductReview(){ProductID=5,UserID=5,Rating=3,Review="Bad",isLike=true},
+                new ProductReview(){ProductID=5,UserID=2,Rating=3,Review="Bad",isLike=true},
+                new ProductReview(){ProductID=6,UserID=4,Rating=5,Review="Average",isLike=true},
+                new ProductReview(){ProductID=6,UserID=5,Rating=5,Review="Average",isLike=true},
+                new ProductReview(){ProductID=7,UserID=5,Rating=1,Review="Worst",isLike=false},
+                new ProductReview(){ProductID=8,UserID=1,Rating=9,Review="Excellent",isLike=true},
+                new ProductReview(){ProductID=8,UserID=3,Rating=3,Review="Bad",isLike=false},
+                new ProductReview(){ProductID=6,UserID=4,Rating=4,Review="Bad",isLike=true},
+                new ProductReview(){ProductID=1,UserID=2,Rating=2,Review="Worst",isLike=true},
+                new ProductReview(){ProductID=9,UserID=2,Rating=6,Review="Good",isLike=true},
+                new ProductReview(){ProductID=7,UserID=3,Rating=7,Review="Good",isLike=true},
+                new ProductReview(){ProductID=9,UserID=2,Rating=5,Review="Average",isLike=true},
+                new ProductReview(){ProductID=6,UserID=5,Rating=1,Review="Worst",isLike=true},
+                new ProductReview(){ProductID=3,UserID=4,Rating=3,Review="Bad",isLike=true},
+                new ProductReview(){ProductID=2,UserID=4,Rating=7,Review="Good",isLike=true},
+                new ProductReview(){ProductID=7,UserID=2,Rating=4,Review="Bad",isLike=true},
+                new ProductReview(){ProductID=9,UserID=6,Rating=10,Review="Excellent",isLike=true},
+                new ProductReview(){ProductID=5,UserID=3,Rating=5,Review="Average",isLike=true}
+            };
+
+            // Printing Product review list
+            foreach (var list in productReviewList)
+            {
+                Console.WriteLine("ProductID: " + list.ProductID + "\t" + "User ID: " + list.UserID +
+                    "\t" + "Rating: " + list.Rating + "\t" + "Review: " + list.Review.PadRight(15) + "isLike: " + list.isLike);
+            }
         }
     }
 }
