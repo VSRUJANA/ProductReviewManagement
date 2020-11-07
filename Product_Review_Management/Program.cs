@@ -49,8 +49,11 @@ namespace Product_Review_Management
             //Console.WriteLine("\nCount of reviews present for each productID :");
             //management.RetrieveCountOfRecords(productReviewList);
 
-            Console.WriteLine("\nGet Product Id and reviews from Product Review List :");
-            management.GetProductIdAndReview(productReviewList);
+            //Console.WriteLine("\nGet Product Id and reviews from Product Review List :");
+            //management.GetProductIdAndReview(productReviewList);
+
+            Console.WriteLine("Skip top 5 records and display other records from the Product Review List :");
+            management.SkipTop5Records(productReviewList);
         }
     }
 }
