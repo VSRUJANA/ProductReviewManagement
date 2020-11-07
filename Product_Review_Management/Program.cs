@@ -40,14 +40,17 @@ namespace Product_Review_Management
 
             Management management = new Management();
 
-            Console.WriteLine("\nTop 3 best rated records in Product Review List : ");
-            management.Top3Records(productReviewList);
+            //Console.WriteLine("\nTop 3 best rated records in Product Review List : ");
+            //management.Top3Records(productReviewList);
 
-            Console.WriteLine("\nRecords whose rating is greater than 3 and productID is 1 or 4 or 9 :");
-            management.SelectedRecords(productReviewList);
+            //Console.WriteLine("\nRecords whose rating is greater than 3 and productID is 1 or 4 or 9 :");
+            //management.SelectedRecords(productReviewList);
 
-            Console.WriteLine("\nCount of reviews present for each productID :");
-            management.RetrieveCountOfRecords(productReviewList);
+            //Console.WriteLine("\nCount of reviews present for each productID :");
+            //management.RetrieveCountOfRecords(productReviewList);
+
+            Console.WriteLine("\nGet Product Id and reviews from Product Review List :");
+            management.GetProductIdAndReview(productReviewList);
         }
     }
 }
