@@ -69,5 +69,37 @@ namespace Product_Review_Management
                 Console.Write("\t" + "Review: " + list.Review.PadRight(15) + "isLike: " + list.isLike + "\n");
             }
         }
+
+        // Insert values in data table from list
+        public void InsertValuesInDataTable(List<ProductReview> listProductReview)
+        {
+            dataTable.Columns.Add("ProductID", typeof(int));
+            dataTable.Columns.Add("UserID", typeof(int));
+            dataTable.Columns.Add("Rating", typeof(double));
+            dataTable.Columns.Add("Review");
+            dataTable.Columns.Add("isLike", typeof(bool));
+
+            foreach (ProductReview product in listProductReview)
+            {
+                dataTable.Rows.Add(product.ProductID, product.UserID, product.Rating, product.Review, product.isLike);
+            }
+        }
+
+        // Display values in the data table
+        public void DisplayDataTable()
+        {
+            foreach (DataColumn col in dataTable.Columns)
+            {
+                Console.Write(col.ToString().PadRight(15));
+            }
+            foreach (DataRow row in dataTable.Rows)
+            {
+                Console.WriteLine();
+                foreach (DataColumn col in dataTable.Columns)
+                {
+                    Console.Write(row[col].ToString().PadRight(15));
+                }
+            }
+        }
     }
 }
