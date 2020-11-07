@@ -18,7 +18,21 @@ namespace Product_Review_Management
             foreach (var list in recordedData)
             {
                 Console.Write("ProductID: " + list.ProductID + "\t" + "User ID: " + list.UserID + "\t" + "Rating: " + list.Rating);
-                Console.Write("\t" + "Review: " + list.Review.PadRight(15) + "isLike: " + list.isLike+"\n");
+                Console.Write("\t" + "Review: " + list.Review.PadRight(15) + "isLike: " + list.isLike + "\n");
+            }
+        }
+
+        // Retrieve all records from the list whose rating is greater than 3 and productID is 1 or 4 or 9
+        public void SelectedRecords(List<ProductReview> listProductReview)
+        {
+            var recordedData = from productReviews in listProductReview
+                               where (productReviews.ProductID == 1 || productReviews.ProductID == 4 || productReviews.ProductID == 9)
+                               && productReviews.Rating > 3
+                               select productReviews;
+            foreach (var list in recordedData)
+            {
+                Console.Write("ProductID: " + list.ProductID + "\t" + "User ID: " + list.UserID + "\t" + "Rating: " + list.Rating);
+                Console.Write("\t" + "Review: " + list.Review.PadRight(15) + "isLike: " + list.isLike + "\n");
             }
         }
     }

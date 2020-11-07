@@ -8,10 +8,10 @@ namespace Product_Review_Management
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Product Review Management System!\n");
+            Console.WriteLine("Welcome to Product Review Management System!");
             List<ProductReview> productReviewList = new List<ProductReview>()
             {
-                new ProductReview(){ProductID=1,UserID=1,Rating=3,Review="Bad",isLike=true},
+                new ProductReview(){ProductID=1,UserID=1,Rating=4,Review="Bad",isLike=true},
                 new ProductReview(){ProductID=2,UserID=2,Rating=7,Review="Good",isLike=true},
                 new ProductReview(){ProductID=2,UserID=1,Rating=10,Review="Excellent",isLike=true},
                 new ProductReview(){ProductID=2,UserID=3,Rating=9,Review="Excellent",isLike=false},
@@ -38,9 +38,13 @@ namespace Product_Review_Management
                 new ProductReview(){ProductID=5,UserID=3,Rating=5,Review="Average",isLike=true}
             };
 
-            Console.WriteLine("Top 3 best rated records in Product Review List : ");
             Management management = new Management();
+
+            Console.WriteLine("\nTop 3 best rated records in Product Review List : ");
             management.Top3Records(productReviewList);
+
+            Console.WriteLine("\nRecords whose rating is greater than 3 and productID is 1 or 4 or 9 :");
+            management.SelectedRecords(productReviewList);
         }
     }
 }
