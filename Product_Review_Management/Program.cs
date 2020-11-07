@@ -56,8 +56,11 @@ namespace Product_Review_Management
             //management.SkipTop5Records(productReviewList);
 
             management.InsertValuesInDataTable(productReviewList);
-            Console.WriteLine("\nValues inserted into Datatable successfully!");
-            management.DisplayDataTable();
+            //Console.WriteLine("\nValues inserted into Datatable successfully!");
+            //management.DisplayDataTable();
+
+            Console.WriteLine("Retrieve all the records from the datatable with isLike value as true :");
+            management.GetRecordsWithIsLikeTrue();
 
         }
     }

@@ -101,5 +101,19 @@ namespace Product_Review_Management
                 }
             }
         }
+
+        // Retrieve all the records from the datatable with isLike value as true 
+        public void GetRecordsWithIsLikeTrue()
+        {
+            var query = from productReview in dataTable.AsEnumerable()
+                        where productReview.Field<bool>("isLike") == true
+                        select productReview;
+            foreach (DataRow product in query)
+            {
+                Console.WriteLine("ProductID : " + product.Field<int>("ProductID") + "\t" + "UserID : " + product.Field<int>("UserID")
+                    + "\t" + "Rating : " + product.Field<double>("Rating") + "\t" + "Review : " + product.Field<string>("Review").PadRight(15)
+                    + "isLike : " + product.Field<bool>("isLike"));
+            }
+        }
     }
 }
